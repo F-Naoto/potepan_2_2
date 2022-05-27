@@ -16,6 +16,8 @@ btns.forEach(btn => {
    const text = e.target.textContent;
   if(text === "="){
     connectedText = eval(connectedText);
+    calDisableHandler();
+    zeroDisableHander();
   } else if(text === "AC"){
     connectedText = "";
     calDisableHandler();
@@ -23,7 +25,7 @@ btns.forEach(btn => {
   } else {
     connectedText += text;
     // if("+-*/".indexOf(connectedText.slice(-1)))??
-    if(connectedText.slice(-1) === "-" || "+" || "*" || "/"){
+    if(connectedText.slice(-1) === "-" || connectedText.slice(-1) === "+" || connectedText.slice(-1) === "*" || connectedText.slice(-1) === "/" || connectedText.slice(-1) === "." ){
     calDisableHandler();
     }
   }
